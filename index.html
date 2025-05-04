@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página Web Base</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        /* Estilo para ocultar los submenús por defecto */
+        nav ul {
+            display: none;
+            list-style: none;
+            padding: 0;
+        }
+
+        /* Estilo para mostrar los submenús cuando están activos */
+        nav ul.active {
+            display: block;
+        }
+    </style>
+</head>
+<script src="menu.js"></script>
+<body>
+    <!-- Sección Hero -->
+    <section class="hero">
+        <h1>Bienvenido a Misael Desing</h1>
+        <p>Diseño Grafico Profecional y Creacion de Contenidos</p>
+    </section>
+
+    <!-- Sección Sobre Nosotros -->
+    <section class="about">
+        <nav>
+            <a href="#cotizar">Cotizar</a>
+            <ul>
+                <li><a href="#sub1">Aquí 1</a></li>
+                <li><a href="#sub2">Aquí 2</a></li>
+                <li><a href="#sub3">Aquí 3</a></li>
+                <li><a href="#sub4">Aquí 4</a></li>
+            </ul>
+            <a href="#contactar">Contactar</a>
+            <ul>
+                <li><a href="#sub1">Aquí 1</a></li>
+                <li><a href="#sub2">Aquí 2</a></li>
+                <li><a href="#sub3">Aquí 3</a></li>
+                <li><a href="#sub4">Aquí 4</a></li>
+            </ul>
+            <a href="#historia">Historia</a>
+            <ul>
+                <li><a href="#sub1">Aquí 1</a></li>
+                <li><a href="#sub2">Aquí 2</a></li>
+                <li><a href="#sub3">Aquí 3</a></li>
+                <li><a href="#sub4">Aquí 4</a></li>
+            </ul>
+            <a href="#quienes-somos">Quienes Somos</a>
+            <ul>
+                <li><a href="#sub1">Aquí 1</a></li>
+                <li><a href="#sub2">Aquí 2</a></li>
+                <li><a href="#sub3">Aquí 3</a></li>
+                <li><a href="#sub4">Aquí 4</a></li>
+            </ul>
+        </nav>
+            
+    </section>
+
+    <!-- Contenido Principal -->
+    <main>
+        <p>Contenido principal de la página.</p>
+
+        <!-- Galería de Productos -->
+        <section class="product-gallery">
+            <h2>Galería de Productos</h2>
+            <div class="gallery-grid">
+                <!-- Producto 1 -->
+                <div class="product-box">
+                    <img src="IMAGENES/foto.jpg" alt="Descripción de la imagen" />
+                    <p>Producto 1</p>
+                </div>
+                <!-- Producto 2 -->
+                <div class="product-box">
+                    <img src="IMAGENES/foto2.jpg" alt="Producto 2" />
+                    <p>Producto 2</p>
+                </div>
+                <!-- Producto 3 -->
+                <div class="product-box">
+                    <img src="IMAGENES/foto3.jpg" alt="Producto 3" />
+                    <p>Producto 3</p>
+                </div>
+                <!-- Producto 4 -->
+                <div class="product-box">
+                    <img src="IMAGENES/foto4.jpg" alt="Producto 4" />
+                    <p>Producto 4</p>
+                </div>
+                <!-- Producto 5 -->
+                <div class="product-box">
+                    <img src="IMAGENES/foto5.jpg" alt="Producto 5" />
+                    <p>Producto 5</p>
+                </div>
+                <!-- Producto 6 -->
+                <div class="product-box">
+                    <img src="IMAGENES/fott.jpeg" alt="Producto 6" />
+                    <p>Producto 6</p>
+                </div>
+                <!-- Producto 7 -->
+                <div class="product-box">
+                    <img src="IMAGENES/foto7.jpg" alt="Producto 7" />
+                    <p>Producto 7</p>
+                </div>
+                <!-- Producto 8 -->
+                <div class="product-box">
+                    <img src="IMAGENES/foto9.jpg" alt="Producto 8" />
+                    <p>Producto 8</p>
+                </div>
+                <!-- Producto 9 -->
+                <div class="product-box">
+                    <img src="IMAGENES/foto8.jpg" alt="Producto 9" />
+                    <p>Producto 9</p>
+                </div>
+                <!-- Producto 10 -->
+                <div class="product-box">
+                    <img src="https://via.placeholder.com/150" alt="Producto 10" />
+                    <p>Producto 10</p>
+                </div>
+                <!-- Producto 11 -->
+                <div class="product-box">
+                    <img src="https://via.placeholder.com/150" alt="Producto 11" />
+                    <p>Producto 11</p>
+                </div>
+                <!-- Producto 12 -->
+                <div class="product-box">
+                    <img src="https://via.placeholder.com/150" alt="Producto 12" />
+                    <p>Producto 12</p>
+                </div>
+                <!-- Producto 13 -->
+                <div class="product-box">
+                    <img src="https://via.placeholder.com/150" alt="Producto 13" />
+                    <p>Producto 13</p>
+                </div>
+                <!-- Producto 14 -->
+                <div class="product-box">
+                    <img src="https://via.placeholder.com/150" alt="Producto 14" />
+                    <p>Producto 14</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer>
+        <p>MISAEL © 2024</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Seleccionar todos los enlaces principales del menú
+            const mainMenuLinks = document.querySelectorAll('nav > a');
+
+            mainMenuLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+
+                    // Alternar la visibilidad del submenú asociado
+                    const submenu = link.nextElementSibling;
+                    if (submenu && submenu.tagName === 'UL') {
+                        submenu.classList.toggle('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
