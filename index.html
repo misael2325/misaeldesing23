@@ -17,9 +17,106 @@
         nav ul.active {
             display: block;
         }
+
+        /* Estilos para el menú de navegación */
+        .modern-menu {
+            background-color: #007bff;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .modern-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .modern-menu .menu-item {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        .modern-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .modern-menu a:hover {
+            background-color: #0056b3;
+        }
+
+        .modern-menu .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #007bff;
+            border-radius: 5px;
+            padding: 10px 0;
+        }
+
+        .modern-menu .menu-item:hover .submenu {
+            display: block;
+        }
+
+        .modern-menu .submenu a {
+            display: block;
+            padding: 10px 20px;
+        }
+
+        /* Estilos para el formulario */
+        .contact-form-section {
+            margin: 20px auto;
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        .contact-form-section h2 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        .modern-form label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        .modern-form input,
+        .modern-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .modern-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .modern-form button:hover {
+            background-color: #0056b3;
+        }
     </style>
+    <script src="menu.js"></script>
 </head>
-<script src="menu.js"></script>
 <body>
     <!-- Sección Hero -->
     <section class="hero">
@@ -29,37 +126,53 @@
 
     <!-- Sección Sobre Nosotros -->
     <section class="about">
-        <nav>
-            <a href="#cotizar">Cotizar</a>
+        <nav class="modern-menu">
             <ul>
-                <li><a href="#sub1">Aquí 1</a></li>
-                <li><a href="#sub2">Aquí 2</a></li>
-                <li><a href="#sub3">Aquí 3</a></li>
-                <li><a href="#sub4">Aquí 4</a></li>
-            </ul>
-            <a href="#contactar">Contactar</a>
-            <ul>
-                <li><a href="#sub1">Aquí 1</a></li>
-                <li><a href="#sub2">Aquí 2</a></li>
-                <li><a href="#sub3">Aquí 3</a></li>
-                <li><a href="#sub4">Aquí 4</a></li>
-            </ul>
-            <a href="#historia">Historia</a>
-            <ul>
-                <li><a href="#sub1">Aquí 1</a></li>
-                <li><a href="#sub2">Aquí 2</a></li>
-                <li><a href="#sub3">Aquí 3</a></li>
-                <li><a href="#sub4">Aquí 4</a></li>
-            </ul>
-            <a href="#quienes-somos">Quienes Somos</a>
-            <ul>
-                <li><a href="#sub1">Aquí 1</a></li>
-                <li><a href="#sub2">Aquí 2</a></li>
-                <li><a href="#sub3">Aquí 3</a></li>
-                <li><a href="#sub4">Aquí 4</a></li>
+                <li class="menu-item">
+                    <a href="#cotizar">Cotizar</a>
+                    <ul class="submenu">
+                        <li><a href="#formulario-cliente">Formulario de Cliente</a></li>
+                        <li><a href="#formulario-cotizacion">Formulario de Cotización</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item"><a href="#contactar">Contactar</a></li>
+                <li class="menu-item"><a href="#historia">Historia</a></li>
+                <li class="menu-item"><a href="#quienes-somos">Quienes Somos</a></li>
             </ul>
         </nav>
             
+    </section>
+
+    <!-- Sección del formulario de contacto -->
+    <!-- Eliminado el formulario de contacto -->
+
+    <!-- Eliminado el Formulario de Cliente -->
+
+    <!-- Contenedor para el formulario de cotización -->
+    <section id="formulario-cotizacion" style="display: none;">
+        <h2>Formulario de Cotización</h2>
+        <form id="cotizar-ahora" class="formulario" style="display: none;">
+            <h3>Cotizar Ahora</h3>
+            <label for="producto">Producto:</label>
+            <input type="text" id="producto" name="producto" required>
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" required>
+            <button type="submit">Enviar</button>
+        </form>
+
+        <form id="simular-cotizacion" class="formulario" style="display: none;">
+            <h3>Simular Cotización</h3>
+            <label for="producto-simulado">Producto:</label>
+            <input type="text" id="producto-simulado" name="producto-simulado" required>
+            <label for="cantidad-simulada">Cantidad:</label>
+            <input type="number" id="cantidad-simulada" name="cantidad-simulada" required>
+            <button type="submit">Simular</button>
+        </form>
+
+        <form id="cotizaciones-anteriores" class="formulario" style="display: none;">
+            <h3>Cotizaciones Anteriores</h3>
+            <p>No hay cotizaciones anteriores disponibles.</p>
+        </form>
     </section>
 
     <!-- Contenido Principal -->
@@ -117,28 +230,34 @@
                 </div>
                 <!-- Producto 10 -->
                 <div class="product-box">
-                    <img src="https://via.placeholder.com/150" alt="Producto 10" />
+                    <img src="IMAGENES/foto8.jpg" alt="Producto 10" />
                     <p>Producto 10</p>
                 </div>
                 <!-- Producto 11 -->
                 <div class="product-box">
-                    <img src="https://via.placeholder.com/150" alt="Producto 11" />
+                    <img src="IMAGENES/foto9.jpg" alt="Producto 11" />
                     <p>Producto 11</p>
                 </div>
                 <!-- Producto 12 -->
                 <div class="product-box">
-                    <img src="https://via.placeholder.com/150" alt="Producto 12" />
+                    <img src="IMAGENES/foto7.jpg" alt="Producto 12" />
                     <p>Producto 12</p>
                 </div>
                 <!-- Producto 13 -->
                 <div class="product-box">
-                    <img src="https://via.placeholder.com/150" alt="Producto 13" />
+                    <img src="IMAGENES/foto7.jpg" alt="Producto 13" />
                     <p>Producto 13</p>
                 </div>
                 <!-- Producto 14 -->
                 <div class="product-box">
-                    <img src="https://via.placeholder.com/150" alt="Producto 14" />
-                    <p>Producto 14</p>
+                    <img src="IMAGENES/foto7.jpg" alt="Producto 14" />
+                    <p>Producto 14</p>    
+                </div>        
+                    <!-- Producto 14 -->
+                <div class="product-box">
+                    <img src="IMAGENES/foto7.jpg" alt="Producto 15" />
+                    <p>Producto 15</p> 
+
                 </div>
             </div>
         </section>
@@ -148,20 +267,35 @@
     <footer>
         <p>MISAEL © 2024</p>
     </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Seleccionar todos los enlaces principales del menú
-            const mainMenuLinks = document.querySelectorAll('nav > a');
+            const menuItems = document.querySelectorAll('.menu-item');
 
-            mainMenuLinks.forEach(link => {
-                link.addEventListener('click', (event) => {
-                    event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+            menuItems.forEach(item => {
+                const submenu = item.querySelector('.submenu');
 
-                    // Alternar la visibilidad del submenú asociado
-                    const submenu = link.nextElementSibling;
-                    if (submenu && submenu.tagName === 'UL') {
-                        submenu.classList.toggle('active');
+                item.addEventListener('click', (e) => {
+                    e.stopPropagation();
+
+                    // Ocultar todos los submenús
+                    document.querySelectorAll('.submenu').forEach(sub => {
+                        if (sub !== submenu) {
+                            sub.style.display = 'none';
+                        }
+                    });
+
+                    // Alternar visibilidad del submenú actual
+                    if (submenu) {
+                        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
                     }
+                });
+            });
+
+            // Ocultar submenús al hacer clic fuera del menú
+            document.addEventListener('click', () => {
+                document.querySelectorAll('.submenu').forEach(sub => {
+                    sub.style.display = 'none';
                 });
             });
         });
